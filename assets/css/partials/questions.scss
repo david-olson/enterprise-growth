@@ -1,0 +1,33 @@
+.question {
+	.answer {
+		box-sizing: border-box;
+		padding: 20px;
+		background-color: #efefef;
+		display: inline-block;
+		width: (100%-(5*2))/5;
+		margin-right: 2%;
+		&:last-of-type {
+			margin-right: 0;
+		}
+		button {
+			box-sizing: border-box;
+			display: block;
+			width: 100%;
+			background-color: #aaaaaa;
+			border: 0;
+			padding: 10px;
+			cursor: pointer;
+			transition: all ease-out .25s;
+			outline: none;
+			&:hover, &:focus {
+				background-color: #bbbbbb;
+			}
+		}
+		input[type=radio] {
+			visibility: hidden;
+		}
+	}
+}
+.answerChecked {
+	background-color: white !important;
+}
