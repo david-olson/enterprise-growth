@@ -1,0 +1,22 @@
+{
+  "name": "enterprise-growth",
+  "description": "Repo for the Premier Inc. Enterprise Growth campaign landing page",
+  "main": "index.html",
+  "authors": [
+    "David Olson"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/david-olson/enterprise-growth",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "gsap": "^1.19.0",
+    "jquery": "^3.1.1"
+  }
+}
