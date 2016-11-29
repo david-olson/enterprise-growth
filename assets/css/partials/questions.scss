@@ -1,33 +1,50 @@
 .question {
-	.answer {
-		box-sizing: border-box;
-		padding: 20px;
-		background-color: #efefef;
-		display: inline-block;
-		width: (100%-(5*2))/5;
-		margin-right: 2%;
-		&:last-of-type {
-			margin-right: 0;
-		}
-		button {
-			box-sizing: border-box;
-			display: block;
-			width: 100%;
-			background-color: #aaaaaa;
-			border: 0;
-			padding: 10px;
-			cursor: pointer;
-			transition: all ease-out .25s;
-			outline: none;
-			&:hover, &:focus {
-				background-color: #bbbbbb;
-			}
-		}
-		input[type=radio] {
-			visibility: hidden;
-		}
-	}
+    width: 95%; 
+    margin: 0 auto;
+    margin-bottom: 50px;
+    display: none;
+    .answer {
+        box-sizing: border-box;
+        padding: 20px;
+        background-color: #efefef;
+        display: inline-block;
+        width: (100% / 5) - 2;
+        margin-right: 1.9%;
+        vertical-align: top;
+        position: relative;
+        padding-bottom: 60px;
+        &:last-of-type {
+            margin-right: 0;
+        }
+        button {
+            box-sizing: border-box;
+            color: #333333;
+            display: block;
+            width: calc(100% - 40px);
+            background-color: #aaaaaa;
+            border: 0;
+            padding: 10px;
+            cursor: pointer;
+            transition: all ease-out .25s;
+            outline: none;
+            border-radius: 5px;
+            border-bottom: 3px solid rgba(0,0,0,0.5);
+            position: absolute;
+            bottom: 20px; 
+            &:hover,
+            &:focus {
+                background-color: #bbbbbb;
+            }
+            &:active {
+                transform: scale(.98);
+            }
+        }
+        input[type=radio] {
+            display: none;
+        }
+    }
 }
+
 .answerChecked {
-	background-color: white !important;
+    background-color: #699d69 !important;
 }

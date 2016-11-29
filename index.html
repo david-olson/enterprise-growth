@@ -1,134 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Lego Assessment</title>
-	<link rel="stylesheet" href="main.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script src="./assets/js/vendors.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lego Assessment</title>
+    <link href="https://fonts.googleapis.com/css?family=Oswald:700|Roboto+Condensed" rel="stylesheet">
+    <link rel="stylesheet" href="main.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="./assets/js/vendors.min.js"></script>
 </head>
+
 <body>
-	<div class="questions">
-	<form id="question-1">
-		<section class="question question_1" id="question-1">
-			<div class="ask">
-				<h2>Venenatis Nibh</h2>
-				<p>Donec ullamcorper nulla non metus auctor fringilla. Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
-			</div>
-			
-				<div class="answer q1_answer_1">
-					<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-					<button type="button" class="answer_button question1_buttons" id="q1_answer_1">Select</button>
-					<input type="radio" name="question1" value="q1a1" id="q1a1">
-				</div>
-				<div class="answer q1_answer_2">
-					<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
-					<button type="button" class="answer_button question1_buttons" id="q1_answer_2">Select</button>
-					<input type="radio" name="question1" value="q1a2" id="q1a2">
-				</div>
-				<div class="answer q1_answer_3">
-					<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
-					<button type="button" class="answer_button question1_buttons" id="q1_answer_3">Select</button>
-					<input type="radio" name="question1" value="q1a3" id="q1a3">
-				</div>
-				<div class="answer q1_answer_4">
-					<p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
-					<button type="button" class="answer_button question1_buttons" id="q1_answer_4">Select</button>
-					<input type="radio" name="question1" value="q1a4" id="q1a4">
-				</div>
-				<div class="answer q1_answer_5">
-					<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
-					<button type="button" class="answer_button question1_buttons" id="q1_answer_5">Select</button>
-					<input type="radio" name="question1" value="q1a5" id="q1a5">
-				</div>
-		</section>
-		<section class="question question_2" id="question-2">
-			<div class="answer q2_answer_1">
-				<p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
-				<button type="button" class="answer_button question2_buttons" id="q2_answer_1">Select</button>
-				<input type="radio" name="question2" value="q2a1" id="q2a1">
-			</div>
-			<div class="answer q2_answer_2">
-				<p>Nulla vitae elit libero, a pharetra augue.</p>
-				<button type="button" class="answer_button question2_buttons" id="q2_answer_2">Select</button>
-				<input type="radio" name="question2" value="q2a2" id="q2a2">
-			</div>
-			<div class="answer q2_answer_3">
-				<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
-				<button type="button" class="answer_button question2_buttons" id="q2_answer_3">Select</button>
-				<input type="radio" name="question2" value="q2a3" id="q2a3">
-			</div>
-			<div class="answer q2_answer_4">
-				<p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-				<button type="button" class="answer_button question2_buttons" id="q2_answer_4">Select</button>
-				<input type="radio" name="question2" value="q2a4" id="q2a4">
-			</div>
-			<div class="answer q2_answer_5">
-				<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-				<button type="button" class="answer_button question2_buttons" id="q2_answer_5">Select</button>
-				<input type="radio" name="question2" value="q2a5" id="q2a5">
-			</div>
-		</section>
-		<section class="question question_3" id="question-3">
-			<div class="answer q3_answer1">
-				<p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-				<button type="button" class="answer_button question3_buttons" id="q3_answer_1">Select</button>
-				<input type="radio" name="question3" value="q3a1" id="q3a1">
-			</div>
-			<div class="answer q3_answer2">
-				<p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
-				<button type="button" class="answer_button question3_buttons" id="q3_answer_2">Select</button>
-				<input type="radio" name="question3" value="q3a2" id="q3a2">
-			</div>
-			<div class="answer q3_answer3">
-				<p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
-				<button type="button" class="answer_button question3_buttons" id="q3_answer_3">Select</button>
-				<input type="radio" name="question3" value="q3a3" id="q3a3">
-			</div>
-			<div class="answer q3_answer4">
-				<p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-				<button type="button" class="answer_button question3_buttons" id="q3_answer_4">Select</button>
-				<input type="radio" name="question3" value="q3a4" id="q3a4">
-			</div>
-			<div class="answer q3_answer5">
-				<p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
-				<button type="button" class="answer_button question3_buttons" id="q3_answer_5">Select</button>
-				<input type="radio" name="question3" value="q3a5" id="q3a5">
-			</div>
-		</section>
-		<section class="question question_4" id="question-4">
-			<div class="answer q4_answer1">
-				<p>Donec id elit non mi porta gravida at eget metus.</p>
-				<button type="button" class="answer_button answer4_buttons" id="q4_answer1">Select</button>
-				<input type="radio" name="question4" value="q4a1" id="q4a1">
-			</div>
-			<div class="answer q4_answer2">
-				<p>Aenean lacinia bibendum nulla sed consectetur.</p>
-				<button type="button" class="answer_button answer4_buttons" id="q4_answer2">Select</button>
-				<input type="radio" name="question4" value="q4a2" id="q4a2">
-			</div>
-			<div class="answer q4_answer3">
-				<p>Nullam quis risus eget urna mollis ornare vel eu leo.</p>
-				<button type="button" class="answer_button answer4_buttons" id="q4_answer3">Select</button>
-				<input type="radio" name="question4" value="q4a3" id="q4a3">
-			</div>
-			<div class="answer q4_answer4">
-				<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
-				<button type="button" class="answer_button answer4_buttons" id="q4_answer4">Select</button>
-				<input type="radio" name="question4" value="q4a4" id="q4a4">
-			</div>
-			<div class="answer q4_answer5">
-				<p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-				<button type="button" class="answer_button answer4_buttons" id="q4_answer5">Select</button>
-				<input type="radio" name="question4" value="q4a5" id="q4a5">
-			</div>
-		</section>
-		<section class="question question_5" id="question-5"></section>
-		<section class="question question_6" id="question-6"></section>
-		<section class="question question_7" id="question-7"></section>
-		<section class="question question_8" id="question-8"></section>
-		</form>
-	</div>
-	<script src="./assets/js/custom.min.js"></script>
+    <section class="intro">
+        <button type="button" class="submit_answer" id="submit-answer-q0">Get Started</button>
+    </section>
+    <div class="questions">
+        <form>
+            <section class="question question_1" id="question-1">
+                <div class="ask">
+                    <h2>Venenatis Nibh</h2>
+                    <p>Donec ullamcorper nulla non metus auctor fringilla. Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+                </div>
+                <div class="answers">
+                    <div class="answer q1_answer_1">
+                        <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                        <button type="button" class="answer_button question1_buttons" id="q1_answer_1">Select</button>
+                        <input type="radio" name="question1" value="q1a1" id="q1a1">
+                    </div>
+                    <div class="answer q1_answer_2">
+                        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
+                        <button type="button" class="answer_button question1_buttons" id="q1_answer_2">Select</button>
+                        <input type="radio" name="question1" value="q1a2" id="q1a2">
+                    </div>
+                    <div class="answer q1_answer_3">
+                        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
+                        <button type="button" class="answer_button question1_buttons" id="q1_answer_3">Select</button>
+                        <input type="radio" name="question1" value="q1a3" id="q1a3">
+                    </div>
+                    <div class="answer q1_answer_4">
+                        <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+                        <button type="button" class="answer_button question1_buttons" id="q1_answer_4">Select</button>
+                        <input type="radio" name="question1" value="q1a4" id="q1a4">
+                    </div>
+                    <div class="answer q1_answer_5">
+                        <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+                        <button type="button" class="answer_button question1_buttons" id="q1_answer_5">Select</button>
+                        <input type="radio" name="question1" value="q1a5" id="q1a5">
+                    </div>
+                </div>
+                <div class="submit">
+                    <button type="button" class="submit_answer" id="submit-answer-q1">Submit Answer</button>
+                </div>
+            </section>
+            <section class="question question_2" id="question-2">
+                <div class="ask">
+                    <h2>Nibh Ridiculus</h2>
+                    <p>Maecenas faucibus mollis interdum.</p>
+                </div>
+                <div class="answers">
+                    <div class="answer q2_answer_1">
+                        <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+                        <button type="button" class="answer_button question2_buttons" id="q2_answer_1">Select</button>
+                        <input type="radio" name="question2" value="q2a1" id="q2a1">
+                    </div>
+                    <div class="answer q2_answer_2">
+                        <p>Nulla vitae elit libero, a pharetra augue.</p>
+                        <button type="button" class="answer_button question2_buttons" id="q2_answer_2">Select</button>
+                        <input type="radio" name="question2" value="q2a2" id="q2a2">
+                    </div>
+                    <div class="answer q2_answer_3">
+                        <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
+                        <button type="button" class="answer_button question2_buttons" id="q2_answer_3">Select</button>
+                        <input type="radio" name="question2" value="q2a3" id="q2a3">
+                    </div>
+                    <div class="answer q2_answer_4">
+                        <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+                        <button type="button" class="answer_button question2_buttons" id="q2_answer_4">Select</button>
+                        <input type="radio" name="question2" value="q2a4" id="q2a4">
+                    </div>
+                    <div class="answer q2_answer_5">
+                        <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+                        <button type="button" class="answer_button question2_buttons" id="q2_answer_5">Select</button>
+                        <input type="radio" name="question2" value="q2a5" id="q2a5">
+                    </div>
+                </div>
+                <div class="submit">
+                    <button type="button" class="back_button" id="back-button-q2">Go Back</button>
+                    <button type="button" class="submit_answer" id="submit-answer-q2">Submit Answer</button>
+                </div>
+            </section>
+            <section class="question question_3" id="question-3">
+                <div class="ask">
+                    <h2>Etiam Parturient</h2>
+                    <p>Maecenas faucibus mollis interdum. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                <div class="answers">
+                    <div class="answer q3_answer1">
+                        <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+                        <button type="button" class="answer_button question3_buttons" id="q3_answer_1">Select</button>
+                        <input type="radio" name="question3" value="q3a1" id="q3a1">
+                    </div>
+                    <div class="answer q3_answer2">
+                        <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+                        <button type="button" class="answer_button question3_buttons" id="q3_answer_2">Select</button>
+                        <input type="radio" name="question3" value="q3a2" id="q3a2">
+                    </div>
+                    <div class="answer q3_answer3">
+                        <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+                        <button type="button" class="answer_button question3_buttons" id="q3_answer_3">Select</button>
+                        <input type="radio" name="question3" value="q3a3" id="q3a3">
+                    </div>
+                    <div class="answer q3_answer4">
+                        <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+                        <button type="button" class="answer_button question3_buttons" id="q3_answer_4">Select</button>
+                        <input type="radio" name="question3" value="q3a4" id="q3a4">
+                    </div>
+                    <div class="answer q3_answer5">
+                        <p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+                        <button type="button" class="answer_button question3_buttons" id="q3_answer_5">Select</button>
+                        <input type="radio" name="question3" value="q3a5" id="q3a5">
+                    </div>
+                </div>
+                <div class="submit">
+                    <button type="button" class="back_button" id="back-button-q3">Go Back</button>
+                    <button type="button" class="submit_answer" id="submit-answer-q3">Submit Answer</button>
+                </div>
+            </section>
+            <section class="question question_4" id="question-4">
+                <div class="ask">
+                    <h2>Nullam Inceptos</h2>
+                    <p>Nulla vitae elit libero, a pharetra augue. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas faucibus mollis interdum.</p>
+                </div>
+                <div class="answers">
+                    <div class="answer q4_answer1">
+                        <p>Donec id elit non mi porta gravida at eget metus.</p>
+                        <button type="button" class="answer_button question4_buttons" id="q4_answer1">Select</button>
+                        <input type="radio" name="question4" value="q4a1" id="q4a1">
+                    </div>
+                    <div class="answer q4_answer2">
+                        <p>Aenean lacinia bibendum nulla sed consectetur.</p>
+                        <button type="button" class="answer_button question4_buttons" id="q4_answer2">Select</button>
+                        <input type="radio" name="question4" value="q4a2" id="q4a2">
+                    </div>
+                    <div class="answer q4_answer3">
+                        <p>Nullam quis risus eget urna mollis ornare vel eu leo.</p>
+                        <button type="button" class="answer_button question4_buttons" id="q4_answer3">Select</button>
+                        <input type="radio" name="question4" value="q4a3" id="q4a3">
+                    </div>
+                    <div class="answer q4_answer4">
+                        <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
+                        <button type="button" class="answer_button question4_buttons" id="q4_answer4">Select</button>
+                        <input type="radio" name="question4" value="q4a4" id="q4a4">
+                    </div>
+                    <div class="answer q4_answer5">
+                        <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+                        <button type="button" class="answer_button question4_buttons" id="q4_answer5">Select</button>
+                        <input type="radio" name="question4" value="q4a5" id="q4a5">
+                    </div>
+                </div>
+                <div class="submit">
+                    <button type="button" class="back_button" id="back-button-q4">Go Back</button>
+                    <button type="button" class="submit_answer" id="submit-answer-q4">Submit Answer</button>
+                </div>
+            </section>
+            <section class="question question_5" id="question-5"></section>
+            <section class="question question_6" id="question-6"></section>
+            <section class="question question_7" id="question-7"></section>
+            <section class="question question_8" id="question-8"></section>
+        </form>
+    </div>
+    <script src="./assets/js/custom.min.js"></script>
 </body>
+
 </html>

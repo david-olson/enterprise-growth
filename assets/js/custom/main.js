@@ -1,12 +1,29 @@
 window.onload = main();
 
 function main() {
-    var radios = document.getElementsByClassName('answer_button');
-    for (var i = 0; i < radios.length; i++) {
-        radios[i].addEventListener('click', function() {
+    var radios = document.getElementsByClassName('answer_button'),
+        submitButtons = document.getElementsByClassName('submit_answer'),
+        backButtons = document.getElementsByClassName('back_button'),
+        windowH = window.innerHeight;
+    for (i = 0; i < radios.length; i++) {
+        radios[i].addEventListener('click', function () {
             radioCheck(this);
         })
     }
+    for (n = 0; n < submitButtons.length; n++) {
+        submitButtons[n].addEventListener('click', function () {
+            answerSubmit(this);
+        });
+    }
+    for (a = 0; a < backButtons.length; a++ ) {
+        backButtons[a].addEventListener('click', function() {
+            answerBack(this);
+        });
+    }
+    $('section').css({
+        minHeight: windowH + 'px'
+    });
+    setQuestionHeights();
 }
 
 function radioCheck(elem) {
@@ -25,4 +42,68 @@ function radioCheck(elem) {
     $('.' + theAnswerButtons).removeClass('answerChecked');
     $(elem).addClass('answerChecked');
     theRadio.checked = true;
+}
+
+function answerSubmit(elem) {
+    var aId,
+        thisQuestion,
+        nextQuestion,
+        nextQuestionId,
+        nextQuestionObject,
+        nextQuestionOffsetTop,
+        scrollSpeed;
+    aId = elem.id;
+    thisQuestion = aId.substr(-1, 1);
+    nextQuestion = parseInt(thisQuestion) + 1;
+    nextQuestionId = 'question-' + nextQuestion;
+    nextQuestionObject = document.getElementById(nextQuestionId);
+
+    nextQuestionObject.style.display = 'block';
+    setTimeout(function () {
+        nextQuestionOffsetTop = nextQuestionObject.offsetTop;
+        $('html, body').animate({
+            scrollTop: nextQuestionOffsetTop + 'px'
+        });
+    }, 150);
+}
+
+function answerBack(elem) {
+    var aId,
+        thisQuestion,
+        lastQuestion,
+        lastQuestionId,
+        lastQuestionObject,
+        lastQuestionOffsetTop;
+    aId = elem.id;
+    thisQuestion = aId.substr(-1, 1);
+    lastQuestion = parseInt(thisQuestion) - 1;
+    lastQuestionId = 'question-' + lastQuestion;
+    lastQuestionObject = document.getElementById(lastQuestionId);
+    lastQuestionOffsetTop = lastQuestionObject.offsetTop;
+    
+    $('html, body').animate({
+        scrollTop: lastQuestionOffsetTop + 'px'
+    });
+}
+
+function setQuestionHeights() {
+    var questionHolders = document.getElementsByClassName('answer'),
+        questions = document.getElementsByClassName('question'),
+        theHeight = 0;
+    for (z = 0; z < questions.length; z++) {
+        questions[z].style.display = 'block';
+    }
+    for (x = 0; x < questionHolders.length; x++) {
+        if (theHeight < questionHolders[x].clientHeight) {
+            theHeight = questionHolders[x].clientHeight;
+        }
+    }
+    setTimeout(function () {
+        for (y = 0; y < questionHolders.length; y++) {
+            questionHolders[y].style.height = theHeight + 'px';
+        }
+        for (w = 0; w < questions.length; w++) {
+            questions[w].style.display = 'none';
+        }
+    }, 50);
 }

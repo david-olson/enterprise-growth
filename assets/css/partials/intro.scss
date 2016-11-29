@@ -1,0 +1,19 @@
+.intro {
+    button {
+        width: 50%; 
+        margin: 0 auto;
+        display: block;
+        cursor: pointer;
+        padding: 20px;
+        box-sizing: border-box;
+        background-color: #555555;
+        color: #ffffff;
+        border: 0;
+        transition: all ease-out .25s;
+        border-bottom: 3px solid darken(#555555, 25%);
+        outline: none;
+        &:hover, &:focus {
+            background-color: #222222;
+        }
+    }
+}
