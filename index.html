@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Lego Assessment</title>
-    <link href="https://fonts.googleapis.com/css?family=Oswald:700|Roboto+Condensed" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:400,700|Roboto+Condensed" rel="stylesheet">
     <link rel="stylesheet" href="main.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="./assets/js/vendors.min.js"></script>
@@ -15,14 +15,26 @@
     <section class="intro">
         <button type="button" class="submit_answer" id="submit-answer-q0">Get Started</button>
     </section>
+    <div class="logo">
+        <img src="./assets/img/logo.svg" alt="" />
+    </div>
+    <div class="percent_complete">
+        <span id="percentage" class="percentage">0</span>
+    </div>
     <div class="questions">
         <form>
             <section class="question question_1" id="question-1">
-                <div class="ask">
-                    <h2>Venenatis Nibh</h2>
-                    <p>Donec ullamcorper nulla non metus auctor fringilla. Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+                <div class="question_header">
+                    <img class="squares" src="./assets/img/squares-2.svg" alt="" />
+                    <div class="text_wrapper">
+                        <div class="lets_assess">
+                            <h2>Let's Assess <span class="spacer"></span>Lorem Ipsum</h2>
+                            <span class="brick_space"><img src="./assets/img/redbrick.svg" alt="" class="brick"></span>
+                        </div>
+                    </div>
                 </div>
                 <div class="answers">
+                   <p>Donec sed odio dui.</p>
                     <div class="answer q1_answer_1">
                         <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
                         <button type="button" class="answer_button question1_buttons" id="q1_answer_1">Select</button>
@@ -50,13 +62,18 @@
                     </div>
                 </div>
                 <div class="submit">
-                    <button type="button" class="submit_answer" id="submit-answer-q1">Submit Answer</button>
+                    <button type="button" class="submit_answer" id="submit-answer-q1">Submit</button>
                 </div>
             </section>
             <section class="question question_2" id="question-2">
-                <div class="ask">
-                    <h2>Nibh Ridiculus</h2>
-                    <p>Maecenas faucibus mollis interdum.</p>
+                <div class="question_header">
+                    <img class="squares" src="./assets/img/squares-2.svg" alt="" />
+                    <div class="text_wrapper">
+                        <div class="lets_assess">
+                            <h2>Let's Assess <span class="spacer"></span>Sit Amet</h2>
+                            <img src="./assets/img/redbrick.svg" alt="" class="brick">
+                        </div>
+                    </div>
                 </div>
                 <div class="answers">
                     <div class="answer q2_answer_1">
@@ -86,9 +103,11 @@
                     </div>
                 </div>
                 <div class="submit">
-                    <button type="button" class="back_button" id="back-button-q2">Go Back</button>
-                    <button type="button" class="submit_answer" id="submit-answer-q2">Submit Answer</button>
+                    
+                    <button type="button" class="submit_answer" id="submit-answer-q2">Submit</button>
+                    
                 </div>
+                <button type="button" class="back_button" id="back-button-q2">Go Back</button>
             </section>
             <section class="question question_3" id="question-3">
                 <div class="ask">
@@ -123,9 +142,10 @@
                     </div>
                 </div>
                 <div class="submit">
-                    <button type="button" class="back_button" id="back-button-q3">Go Back</button>
-                    <button type="button" class="submit_answer" id="submit-answer-q3">Submit Answer</button>
+                    <button type="button" class="submit_answer" id="submit-answer-q3">Submit</button>
+                     
                 </div>
+                <button type="button" class="back_button" id="back-button-q3">Go Back</button>
             </section>
             <section class="question question_4" id="question-4">
                 <div class="ask">
@@ -160,14 +180,12 @@
                     </div>
                 </div>
                 <div class="submit">
-                    <button type="button" class="back_button" id="back-button-q4">Go Back</button>
-                    <button type="button" class="submit_answer" id="submit-answer-q4">Submit Answer</button>
+                    <button type="button" class="submit_answer" id="submit-answer-q4">Submit</button>
+                    
                 </div>
+                <button type="button" class="back_button" id="back-button-q4">Go Back</button>
             </section>
             <section class="question question_5" id="question-5"></section>
-            <section class="question question_6" id="question-6"></section>
-            <section class="question question_7" id="question-7"></section>
-            <section class="question question_8" id="question-8"></section>
         </form>
     </div>
     <script src="./assets/js/custom.min.js"></script>

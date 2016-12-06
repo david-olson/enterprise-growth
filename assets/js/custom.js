@@ -65,6 +65,8 @@ function answerSubmit(elem) {
             scrollTop: nextQuestionOffsetTop + 'px'
         });
     }, 150);
+    updatePercentage(thisQuestion);
+//    setInterval(updatePercentage(thisQuestion), 1000);
 }
 
 function answerBack(elem) {
@@ -84,11 +86,14 @@ function answerBack(elem) {
     $('html, body').animate({
         scrollTop: lastQuestionOffsetTop + 'px'
     });
+    updatePercentage((lastQuestion - 1));
 }
 
 function setQuestionHeights() {
     var questionHolders = document.getElementsByClassName('answer'),
         questions = document.getElementsByClassName('question'),
+        submitButtons = document.getElementsByClassName('submit_answer'),
+        backButtons = document.getElementsByClassName('back_button'),
         theHeight = 0;
     for (z = 0; z < questions.length; z++) {
         questions[z].style.display = 'block';
@@ -102,8 +107,20 @@ function setQuestionHeights() {
         for (y = 0; y < questionHolders.length; y++) {
             questionHolders[y].style.height = theHeight + 'px';
         }
+        for (e = 0; e < backButtons.length; e++){
+            backButtons[e].style.transform = 'translateY('+(theHeight/2 - 10)+'px)';
+        }
         for (w = 0; w < questions.length; w++) {
+            submitButtons[w].style.transform = 'translateY('+(theHeight/2 - 10)+'px)';
             questions[w].style.display = 'none';
         }
     }, 50);
 }
+
+function updatePercentage(questionNumber) {
+    var percentage = (questionNumber / 5),
+        thePercentage = document.getElementById('percentage');
+    percentage = percentage * 100;
+
+    thePercentage.innerHTML = percentage * 100;
+} 
