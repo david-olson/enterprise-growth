@@ -1,0 +1,26 @@
+.progress_blocks {
+    position: fixed;
+    right: 40px;
+    bottom: 20px;
+    img {
+        width: 150px;
+        position: absolute;
+        right:0;
+        transform: translateY(-900%);
+    }
+    .red {
+        bottom:0;
+    }
+    .orange {
+        bottom: 80px; 
+    }
+    .green {
+        bottom: 160px;
+    }
+    .yellow {
+        bottom: 240px;
+    }
+    .blue {
+        bottom: 320px;
+    }
+}

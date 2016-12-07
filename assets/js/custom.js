@@ -1,6 +1,32 @@
 window.onload = main();
 
+var panel1Height,
+    panel2Height,
+    panel3Height,
+    panel4Height,
+    panel5Height,
+    panel1Active = false,
+    panel2Active = false,
+    panel3Active = false,
+    panel4Active = false,
+    panel5Active = false;
+
+$(window).scroll(function() {
+    var scroll = $(window).scrollTop();
+    
+    console.log(scroll);
+    console.log(panel1Height + ' ' + panel2Height);
+    
+    if (parseInt(scroll) < parseInt(panel1Height)) {
+        if (panel1Active = false) {
+            alert("Panel 1 in view!");
+            panel1Active = true;
+        }
+    } 
+});
+
 function main() {
+    
     var radios = document.getElementsByClassName('answer_button'),
         submitButtons = document.getElementsByClassName('submit_answer'),
         backButtons = document.getElementsByClassName('back_button'),
@@ -15,8 +41,8 @@ function main() {
             answerSubmit(this);
         });
     }
-    for (a = 0; a < backButtons.length; a++ ) {
-        backButtons[a].addEventListener('click', function() {
+    for (a = 0; a < backButtons.length; a++) {
+        backButtons[a].addEventListener('click', function () {
             answerBack(this);
         });
     }
@@ -51,7 +77,8 @@ function answerSubmit(elem) {
         nextQuestionId,
         nextQuestionObject,
         nextQuestionOffsetTop,
-        scrollSpeed;
+        scrollSpeed,
+        soundNumber;
     aId = elem.id;
     thisQuestion = aId.substr(-1, 1);
     nextQuestion = parseInt(thisQuestion) + 1;
@@ -65,8 +92,14 @@ function answerSubmit(elem) {
             scrollTop: nextQuestionOffsetTop + 'px'
         });
     }, 150);
-    updatePercentage(thisQuestion);
-//    setInterval(updatePercentage(thisQuestion), 1000);
+    //    updatePercentage(thisQuestion);
+    newUpdatePercentage(thisQuestion);
+    brickDrop(thisQuestion);
+    min = Math.ceil(1);
+    max = Math.floor(4);
+    soundNumber = Math.floor(Math.random() * (max-min + 1)) + min;
+    var theSound = new Audio('./assets/audio/'+soundNumber + '.mp3');
+    theSound.play();
 }
 
 function answerBack(elem) {
@@ -82,11 +115,12 @@ function answerBack(elem) {
     lastQuestionId = 'question-' + lastQuestion;
     lastQuestionObject = document.getElementById(lastQuestionId);
     lastQuestionOffsetTop = lastQuestionObject.offsetTop;
-    
+
     $('html, body').animate({
         scrollTop: lastQuestionOffsetTop + 'px'
     });
-    updatePercentage((lastQuestion - 1));
+    newUpdatePercentage((lastQuestion - 1));
+    brickUp(thisQuestion - 1);
 }
 
 function setQuestionHeights() {
@@ -103,15 +137,19 @@ function setQuestionHeights() {
             theHeight = questionHolders[x].clientHeight;
         }
     }
+    
+    panel1Height = document.getElementById('question-1').offsetTop;
+    panel2Height = document.getElementById('question-2').offsetTop;
+    panel3Height = document.getElementById('question-3').offsetTop;
+    panel4Height = document.getElementById('question-4').offsetTop;
+    panel5Height = document.getElementById('question-5').offsetTop;
+    
     setTimeout(function () {
+        
         for (y = 0; y < questionHolders.length; y++) {
             questionHolders[y].style.height = theHeight + 'px';
         }
-        for (e = 0; e < backButtons.length; e++){
-            backButtons[e].style.transform = 'translateY('+(theHeight/2 - 10)+'px)';
-        }
         for (w = 0; w < questions.length; w++) {
-            submitButtons[w].style.transform = 'translateY('+(theHeight/2 - 10)+'px)';
             questions[w].style.display = 'none';
         }
     }, 50);
@@ -122,5 +160,114 @@ function updatePercentage(questionNumber) {
         thePercentage = document.getElementById('percentage');
     percentage = percentage * 100;
 
-    thePercentage.innerHTML = percentage * 100;
-} 
+    thePercentage.innerHTML = percentage;
+}
+
+function newUpdatePercentage(questionNumber) {
+    var percentage = (questionNumber / 5),
+        thePercentage = document.getElementById('percentage'),
+        currentVal = thePercentage.innerHTML;
+    percentage = percentage * 100;
+    $(thePercentage).prop('number', currentVal).animateNumber({
+        number: percentage
+    });
+}
+
+function brickDrop(questionNumber) {
+    var color,
+        nextColor,
+        brick,
+        nextBrick;
+    questionNumber = parseInt(questionNumber);
+    switch (questionNumber) {
+    case 0:
+        color = false;
+        nextColor = 'red';
+        break;
+    case 1:
+        color = 'red';
+        nextColor = 'orange'
+        break;
+    case 2:
+        color = 'orange';
+        nextColor = 'green';
+        break;
+    case 3:
+        color = 'green';
+        nextColor = 'yellow';
+        break;
+    case 4:
+        color = 'yellow';
+        nextColor = 'blue'
+        break;
+    case 5:
+        color = 'blue';
+        nextColor = false;
+        break;
+    }
+
+    brick = document.getElementById(color);
+    nextBrick = document.getElementById(nextColor);
+
+    if (brick !== null) {
+        TweenLite.to(brick, .25, {
+            y: '0%'
+        });
+    }
+    setTimeout(function () {
+        if (nextBrick !== null) {
+            TweenLite.to(nextBrick, .25, {
+                y: '-105%'
+            })
+        }
+    }, 500);
+}
+
+function brickUp(questionNumber) {
+    var color,
+        lastColor,
+        brick,
+        lastBrick;
+    questionNumber = parseInt(questionNumber);
+    switch (questionNumber) {
+        case 0 :
+            color = 'red';
+            lastColor = false;
+            break;
+        case 1 :
+            color = 'orange';
+            lastColor = 'red';
+            break;
+        case 2 :
+            color = 'green';
+            lastColor = 'orange'
+            break;
+        case 3 :
+            color = 'yellow';
+            lastColor = 'green';
+            break;
+        case 4 :
+            color = 'blue';
+            lastColor = 'yellow';
+            break;
+        case 5 :
+            color = false;
+            lastColor = 'blue';
+            break;
+    }
+    brick = document.getElementById(color);
+    lastBrick = document.getElementById(lastColor);
+    
+    if (brick !== null) {
+        TweenLite.to(brick, .25, {
+            y: '-900%'
+        });
+    }
+    setTimeout(function() {
+        if (lastBrick !== null) {
+            TweenLite.to(lastBrick, .25, {
+                y: '-105%'
+            });
+        }
+    }, 500);
+}
