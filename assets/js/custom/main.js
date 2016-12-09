@@ -10,31 +10,11 @@ var panel1Height,
     panel3Active = false,
     panel4Active = false,
     panel5Active = false,
-    activePanels = [false, false, false, false, false];
+    activePanels = [false, false, false, false, false],
+    activeHistory = [-1];
 
 $(window).scroll(function () {
     setActivePanel();
-    //    var scroll = $(window).scrollTop();
-
-
-    //    console.log(scroll);
-    //    console.log(panel1Height + ' ' + panel2Height);
-
-    //    if (parseInt(scroll) > parseInt((panel1Height - 1)) && parseInt(scroll) < parseInt((panel2Height - 1)) && panel1Active === false) {
-    //        console.log('Panel 1 Active');
-    //        panel1Active = true;
-    //        panel2Active = false;
-    //        panel3Active = false;
-    //        panel4Active = false;
-    //        panel5Active = false;
-    //    } else if (parseInt(scroll) > parseInt(panel2Height - 1) && parseInt(scroll) < parseInt(panel3Height - 1) && panel2Active === false) {
-    //        console.log('Panel 2 Active');
-    //        panel1Active = false;
-    //        panel2Active = true;
-    //        panel3Active = false;
-    //        panel4Active = false; 
-    //        panel5Active = false;
-    //    }
 });
 
 function main() {
@@ -105,7 +85,7 @@ function answerSubmit(elem) {
         });
     }, 150);
     //    updatePercentage(thisQuestion);
-    newUpdatePercentage(thisQuestion);
+//    newUpdatePercentage(thisQuestion);
     //    brickDrop(thisQuestion);
     min = Math.ceil(1);
     max = Math.floor(4);
@@ -131,7 +111,7 @@ function answerBack(elem) {
     $('html, body').animate({
         scrollTop: lastQuestionOffsetTop + 'px'
     });
-    newUpdatePercentage((lastQuestion - 1));
+//    newUpdatePercentage((lastQuestion - 1));
     //    brickUp(thisQuestion - 1);
 }
 
@@ -274,55 +254,62 @@ function brickUp(questionNumber) {
         TweenLite.to(brick, .25, {
             y: '-900%'
         });
-        console.log('Fly Away');
     }
     setTimeout(function () {
         if (lastBrick !== null) {
             TweenLite.to(lastBrick, .25, {
                 y: '-105%'
             });
-            console.log('Jump');
         }
     }, 500);
 }
 
 function setActivePanel() {
-    var scroll = $(window).scrollTop();
+    var scroll = $(window).scrollTop(),
+        y;
 
-
-
-    if (parseInt(scroll) > parseInt((panel1Height - 1)) && parseInt(scroll) < parseInt((panel2Height - 1)) && activePanels[0] === false) {
+    if (scroll > panel1Height - 100 && scroll < panel2Height - 100 && activePanels[0] === false) {
         console.log("Panel 1 is Active");
-        togglePanelStates(0);
-    } else if (parseInt(scroll) > parseInt((panel2Height - 1)) && parseInt(scroll) < parseInt((panel3Height - 1)) && activePanels[1] === false) {
+        y = activeHistory.slice(-1)[0];
+        togglePanelStates(0, y);
+        newUpdatePercentage(0);
+    } else if (scroll > panel2Height - 100 && scroll < panel3Height - 100 && activePanels[1] === false) {
         console.log("Panel 2 is Active");
-        togglePanelStates(1);
-    } else if (scroll > panel3Height - 1 && scroll < panel4Height - 1 && activePanels[2] === false) {
+        y = activeHistory.slice(-1)[0];
+        togglePanelStates(1, y);
+        newUpdatePercentage(1);
+    } else if (scroll > panel3Height - 100 && scroll < panel4Height - 100 && activePanels[2] === false) {
         console.log('Panel 3 is Active');
-        togglePanelStates(2);
-    } else if (scroll > panel4Height - 1 && scroll < panel5Height - 1 && activePanels[3] === false) {
+        y = activeHistory.slice(-1)[0];
+        togglePanelStates(2, y);
+        newUpdatePercentage(2);
+    } else if (scroll > panel4Height - 100 && scroll < panel5Height - 100 && activePanels[3] === false) {
         console.log('Panel 4 is Active');
-        togglePanelStates(3);
+        y = activeHistory.slice(-1)[0];
+        togglePanelStates(3, y);
+        newUpdatePercentage(3);
+    } else if (scroll > panel5Height - 100 && activePanels[4] === false) {
+        console.log('Panel 5 is Active');
+        y = activeHistory.slice(-1)[0];
+        togglePanelStates(4, y);
+        newUpdatePercentage(4);
     }
 
-    function togglePanelStates(activePanel) {
-        var lastPanel = 0;
-        
-        //I honestly have no idea why this last panel bullshit doesnt work. Next step is to refactor the brickDrop/Up Functions into one function and see if I can figure some things out. 
+    function togglePanelStates(activePanel, lastPanel) {
 
         for (x = 0; x < 5; x++) {
 
             if (x === activePanel) {
                 activePanels[x] = true;
-
-                if (x >= lastPanel) {
-                    brickDrop(x);
-                    console.log(lastPanel);
+                if (activePanel > lastPanel) {
+                    brickDrop(activePanel);
+                    setTimeout(function () {
+                        activeHistory.push(activePanel);
+                    }, 100);
                 } else {
-                    brickUp(x);
-                    console.log(lastPanel);
+                    brickUp(activePanel + 1);
+                    activeHistory.push(activePanel);
                 }
-
             } else {
                 activePanels[x] = false;
             }
@@ -336,7 +323,7 @@ function setActivePanel() {
             brick,
             nextBrick,
             lastBrick;
-        
+
     }
 
 }

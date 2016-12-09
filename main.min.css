@@ -16,7 +16,7 @@ button{font-size:.75rem}.intro button{width:50%;margin:0 auto;display:block;curs
 .question_header .text_wrapper{width:90%;margin:0 auto;padding-top:60px}.question_header .lets_assess{margin:0 auto;position:relative;height:270px;display:inline-block;vertical-align:baseline;margin-left:160px}
 .question_header .lets_assess .spacer{display:inline-block;width:70px}.question_header .lets_assess h2{color:#fff;font-weight:normal;letter-spacing:.02em;vertical-align:middle;position:relative;z-index:5;display:inline-block;padding-top:160px}
 .question_header .lets_assess .brick_space{width:100%;text-align:center;display:inline-block;position:absolute;z-index:1;left:0;top:0}
-.question_header .lets_assess .brick{width:140px;display:block;background-image:url("./assets/img/redbrick.svg");background-repeat:no-repeat;background-position:center bottom;background-size:100%;z-index:1;opacity:.4;position:absolute;left:160px;top:105px}
+.question_header .lets_assess .brick{width:140px;display:block;background-repeat:no-repeat;background-position:center bottom;background-size:100%;z-index:1;opacity:.4;position:absolute;left:160px;top:105px}
 .question{width:100%;margin:0 auto;display:none}.question .answers{width:70%;margin-left:5%;display:inline-block}
 .question .answer{box-sizing:border-box;background-color:#fff;display:inline-block;box-shadow:0 0 20px rgba(0,0,0,0.25);vertical-align:top;position:relative;width:100%;margin-bottom:20px}
 .question .answer p{padding:20px 10px;text-align:left;display:table-cell;vertical-align:middle;margin-bottom:0;padding-left:80px}
