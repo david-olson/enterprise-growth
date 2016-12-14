@@ -3,32 +3,46 @@ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{di
 body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}
 table{border-collapse:collapse;border-spacing:0}body,button,input,label{font-family:'Roboto Condensed',sans-serif}
 h1,h2,h3,h4,h5,h6{font-family:'Oswald',sans-serif;padding-bottom:20px}
-html{font-size:calc(1em + 1vw)}@media screen and (min-width:50em){html{font-size:1.5em}
-}h1{font-size:1.602rem;text-transform:uppercase}h2{font-size:1.424rem;text-transform:uppercase}
+html{font-size:calc(1em + 1vw)}@media screen and (min-width:50em){html{font-size:1.65em}
+}h1{font-size:1.602rem;text-transform:uppercase;font-weight:700}h2{font-size:1.424rem;text-transform:uppercase}
 h3{font-size:1.266rem}h4{font-size:1.125rem}p{font-size:.75rem;line-height:1rem;margin-bottom:20px}
-button{font-size:.75rem}.intro button{width:50%;margin:0 auto;display:block;cursor:pointer;padding:20px;box-sizing:border-box;background-color:#555;color:#fff;border:0;transition:all ease-out .25s;border-bottom:3px solid #151515;outline:0}
-.intro button:hover,.intro button:focus{background-color:#222}.logo{position:fixed;top:0;right:0;z-index:9999;padding:5px 20px;background-color:#c00505;border:0 solid #fff;border-left-width:1px;border-bottom-width:1px}
-.logo img{height:40px}.percent_complete{position:fixed;top:150px;right:0;background-color:#222;padding:30px 10px 40px 10px;z-index:9999;font-size:40px;color:#fff}
+button{font-size:.75rem}.intro{background-image:url("./assets/img/brickbackground.png");padding:200px 50px 50px 50px}
+.intro .squares{position:absolute;top:0;left:0;height:300px;z-index:10}.intro button{width:50%;margin:0 auto;display:block;cursor:pointer;padding:20px;box-sizing:border-box;background-color:#555;color:#fff;border:0;transition:all ease-out .25s;border-bottom:3px solid rgba(0,0,0,0.25);outline:0}
+.intro p{margin-bottom:50px}button.intro_button{width:31.3333333333%;display:inline-block;margin-right:2%;border-bottom:0;box-shadow:0 0 20px rgba(0,0,0,0.75);color:rgba(255,255,255,0.75);vertical-align:top;height:325px;padding:10px 50px}
+button.intro_button:last-of-type{margin-right:0}button.intro_button:hover,button.intro_button:focus{color:white}
+button.ceo{background-color:#0077ba;font-size:2.25em;text-align:left;text-transform:uppercase;font-family:'Oswald';font-weight:700}
+button.cfo{background-color:#6faa4a;font-family:'Oswald';font-weight:700;font-size:2.25em;text-align:left;text-transform:uppercase}
+button.sco{background-color:#d02435;font-family:'Oswald';font-weight:700;font-size:2.25em;text-transform:uppercase;text-align:left}
+.logo{position:fixed;top:0;right:0;z-index:9999;padding:5px 20px;background-color:#c00505;border:0 solid #fff;border-left-width:1px;border-bottom-width:1px;transform:translateX(500px)}
+.logo img{height:40px}.logo_dark{position:absolute;top:20px;right:20px;height:75px}
+.percent_complete{position:fixed;top:150px;right:0;background-color:#222;padding:30px 10px 40px 10px;z-index:9999;font-size:40px;min-width:90px;text-align:center;color:#fff;transform:translateX(200px)}
 .percent_complete:after{content:'%';margin-left:-10px}.percent_complete:before{content:'complete';font-size:18px;position:absolute;bottom:25px;left:10px}
 .questions{background-image:url(./assets/img/brickbackground.png);background-repeat:repeat-y;background-position:top left}
 .question_header{background-image:url("./assets/img/redbackground.jpg");background-size:100%;position:relative;margin-bottom:50px}
-.question_header .squares{position:absolute;top:0;left:0;height:175px;z-index:10}
-.question_header .text_wrapper{width:90%;margin:0 auto;padding-top:60px}.question_header .lets_assess{margin:0 auto;position:relative;height:270px;display:inline-block;vertical-align:baseline;margin-left:160px}
-.question_header .lets_assess .spacer{display:inline-block;width:70px}.question_header .lets_assess h2{color:#fff;font-weight:normal;letter-spacing:.02em;vertical-align:middle;position:relative;z-index:5;display:inline-block;padding-top:160px}
+.question_header .squares{position:absolute;top:0;left:0;height:200px;z-index:10}
+.question_header .text_wrapper{width:90%;margin:0 auto;padding-top:60px}.question_header .lets_assess{margin:0 auto;position:relative;display:inline-block;vertical-align:baseline}
+.question_header .lets_assess .spacer{display:inline-block;width:70px}.question_header .lets_assess h2{color:#fff;font-weight:700;letter-spacing:.02em;vertical-align:middle;position:relative;z-index:5;display:inline-block;padding-top:160px;padding-bottom:30px}
 .question_header .lets_assess .brick_space{width:100%;text-align:center;display:inline-block;position:absolute;z-index:1;left:0;top:0}
 .question_header .lets_assess .brick{width:140px;display:block;background-repeat:no-repeat;background-position:center bottom;background-size:100%;z-index:1;opacity:.4;position:absolute;left:160px;top:105px}
 .question{width:100%;margin:0 auto;display:none}.question .answers{width:70%;margin-left:5%;display:inline-block}
-.question .answer{box-sizing:border-box;background-color:#fff;display:inline-block;box-shadow:0 0 20px rgba(0,0,0,0.25);vertical-align:top;position:relative;width:100%;margin-bottom:20px}
-.question .answer p{padding:20px 10px;text-align:left;display:table-cell;vertical-align:middle;margin-bottom:0;padding-left:80px}
-.question .answer:last-of-type{margin-right:0}.question .answer button{box-sizing:border-box;color:#fff;display:block;height:100%;right:0;width:100px;background-color:#333;border:0;padding:10px;cursor:pointer;transition:all ease-out .15s;outline:0;position:absolute;bottom:0}
+.question .answer{box-sizing:border-box;background-color:#fff;display:inline-block;box-shadow:0 0 20px rgba(0,0,0,0.33);width:31.3333333333%;margin-right:2.25%;vertical-align:top;position:relative;padding-bottom:40px;margin-bottom:30px}
+.question .answer p{padding:20px;text-align:left;display:block;vertical-align:middle;margin-bottom:0}
+.question .answer:last-of-type{margin-right:0}.question .answer button{box-sizing:border-box;color:#fff;display:block;width:100%;right:0;background-color:#333;border:0;padding:10px;cursor:pointer;transition:all ease-out .15s;outline:0;position:absolute;bottom:0}
 .question .answer button:hover,.question .answer button:focus{background-color:#555}
 .question .answer button:active{background-color:#333}.question .answer input[type=radio]{display:none}
-.question .option{display:inline-block;background-color:#c00505;height:100%;width:50px;position:absolute;color:#fff;text-align:center;vertical-align:middle;line-height:65px}
+.question .answer.col_4{width:23%;margin-right:1.5%}.question .option{display:inline-block;background-color:#c00505;height:100%;width:50px;position:absolute;color:#fff;text-align:center;vertical-align:middle;line-height:65px}
 .answerChecked{background-color:#c00505 !important}.submit{display:block;margin-left:5%;z-index:9999;position:relative;text-align:right;width:70%;padding-bottom:50px}
-.submit button[type=button]{display:inline-block;background-color:#c00505;border:0;color:#fff;font-family:'Oswald';text-transform:uppercase;font-size:20px;font-weight:400;cursor:pointer;box-shadow:0 0 20px rgba(0,0,0,0.25);transition:all ease-out .25s;outline:0;padding:10px 20px;position:relative;z-index:9999}
+.submit button[type=button]{display:inline-block;background-color:#c00505;border:0;color:#fff;font-family:'Oswald';text-transform:uppercase;font-size:24px;font-weight:400;cursor:pointer;box-shadow:0 0 20px rgba(0,0,0,0.5);transition:all ease-out .25s;outline:0;padding:10px 20px;position:relative;z-index:9999}
 .submit button[type=button]:last-of-type{margin-left:20px}.submit button[type=button]:hover,.submit button[type=button]:focus{background-color:#8e0404}
-.submit button[type=button]:active{box-shadow:0 0 5px rgba(0,0,0,0.25)}.submit button.back_button{display:inline-block;border:0;font-family:'Oswald';text-transform:uppercase;font-size:20px;font-weight:400;cursor:pointer;box-shadow:0 0 20px rgba(0,0,0,0.25);transition:all ease-out .25s;outline:0;padding:10px 20px;background-color:#ddd;color:#777}
-.submit button.back_button:hover{background-color:#c4c4c4}.progress_blocks{position:fixed;right:40px;bottom:20px}
-.progress_blocks img{width:150px;position:absolute;right:0;transform:translateY(-900%)}
+.submit button[type=button]:active{box-shadow:0 0 5px rgba(0,0,0,0.25)}.submit button.back_button{display:inline-block;border:0;font-family:'Oswald';text-transform:uppercase;font-size:24px;font-weight:400;cursor:pointer;box-shadow:0 0 20px rgba(0,0,0,0.5);transition:all ease-out .25s;outline:0;padding:10px 20px;background-color:#ddd;color:#777}
+.submit button.back_button:hover{background-color:#c4c4c4}.submit .answer_error{background-color:#c00505;display:block;width:250px;height:50px;right:-60px;top:85px;position:absolute;box-shadow:0 0 20px rgba(0,0,0,0.5);display:none;opacity:0}
+.submit .answer_error p{padding:10px;text-align:center;color:#fff}.submit .answer_error:before{display:block;content:'';width:0;height:0;border-bottom:10px solid #c00505;border-left:10px solid transparent;border-right:10px solid transparent;position:absolute;top:-10px;left:120px}
+.progress_blocks{position:fixed;right:40px;bottom:20px}.progress_blocks img{width:150px;position:absolute;right:0;transform:translateY(-900%)}
 .progress_blocks .red{bottom:0}.progress_blocks .orange{bottom:80px}.progress_blocks .green{bottom:160px}
-.progress_blocks .yellow{bottom:240px}.progress_blocks .blue{bottom:320px}
+.progress_blocks .yellow{bottom:240px}.progress_blocks .blue{bottom:320px}.last{background-image:url("./assets/img/brickbackground.png")}
+.last .squares{height:300px}.last h2{text-align:center}.last p{text-align:center;padding:20px;display:block;max-width:800px;margin:0 auto}
+.last .module{background-color:#fff;display:block;width:95%;margin:20px auto;max-width:800px;box-shadow:0 0 20px rgba(0,0,0,0.75);padding:50px}
+.last .module label{display:block;margin-bottom:50px;text-transform:uppercase}.last .module input[type=text]{display:block;width:100%;padding:10px 10px 10px 0;font-size:18px;margin-bottom:10px;outline:0;border:0;border-bottom:2px solid #777;transition:all ease-out .25s}
+.last .module input[type=text]:focus{border-bottom-color:#6cab43}.last .module button[type=button]{display:block;width:100%;background-color:#c00505;color:#fff;border:0;padding:20px;font-size:18px;text-transform:uppercase;cursor:pointer;transition:all ease-out .25s}
+.last .module button[type=button]:hover{background-color:#8e0404}.last .other_buttons{display:none;width:95%;margin:0 auto}
+.last .other_buttons button{cursor:pointer;border:0;transition:all ease-out .25s}

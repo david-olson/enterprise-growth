@@ -2,6 +2,8 @@
     box-sizing: border-box;
 }
 
+$red: #c00505;
+
 img {
 //    width: 100%;
 //    height: 100%;
@@ -11,3 +13,4 @@ img {
 @import 'partials/intro'; 
 @import 'partials/questions';
 @import 'partials/bricks';
+@import 'partials/last';

@@ -13,12 +13,19 @@
 
 <body>
     <section class="intro">
-        <button type="button" class="" id="intro-button">Get Started</button>
+        <img class="squares" src="./assets/img/squares-3.svg" alt="" />
+        <img class="logo_dark" src="./assets/img/logo-dark.svg" alt="" />
+        <h1>Let's Assess!</h1>
+        <p>A customized self assessment is in store for you. Please select below which questions you'd like to answer. You will have an opportunity at the end to answer questions of your peers.</p>
+        <!--        <button type="button" class="" id="intro-button">Get Started</button>-->
+        <button type="button" class="intro_button ceo">Chief Executive Officer</button>
+        <button type="button" class="intro_button cfo">Chief Financial Officer</button>
+        <button type="button" class="intro_button sco">Supply Chain Operations</button>
     </section>
-    <div class="logo">
+    <div class="logo" id="main-logo">
         <img src="./assets/img/logo.svg" alt="" />
     </div>
-    <div class="percent_complete">
+    <div class="percent_complete" id="percent-complete">
         <span id="percentage" class="percentage">0</span>
     </div>
     <div class="questions">
@@ -28,27 +35,26 @@
                     <img class="squares" src="./assets/img/squares-2.svg" alt="" />
                     <div class="text_wrapper">
                         <div class="lets_assess">
-                            <h2>Let's Assess <span class="spacer"></span>Supply Chain: Cost Imperative</h2>
-                            <span class="brick_space"><img src="./assets/img/redbrick.svg" alt="" class="brick"></span>
+                            <h2>Supply Chain / Cost Imperative</h2>
                         </div>
                     </div>
                 </div>
                 <div class="answers">
                     <p>Indicate the statement that best reflects your savings goal:</p>
                     <div class="answer q1_answer_1">
-                        <span class="option">1</span>
+                        <!--                        <span class="option">1</span>-->
                         <p>My supply chain savings goal is 0-5% of my total supply chain spend</p>
                         <button type="button" class="answer_button question1_buttons" id="q1_answer_1">Select</button>
                         <input type="radio" name="question1" value="q1a1" id="q1a1">
                     </div>
                     <div class="answer q1_answer_2">
-                        <span class="option">2</span>
+                        <!--                        <span class="option">2</span>-->
                         <p>My supply chain savings goal is >5-10% of my total supply chain spend</p>
                         <button type="button" class="answer_button question1_buttons" id="q1_answer_2">Select</button>
                         <input type="radio" name="question1" value="q1a2" id="q1a2">
                     </div>
                     <div class="answer q1_answer_3">
-                        <span class="option">3</span>
+                        <!--                        <span class="option">3</span>-->
                         <p>My supply chain savings goal is >10% of my total supply chain spend</p>
                         <button type="button" class="answer_button question1_buttons" id="q1_answer_3">Select</button>
                         <input type="radio" name="question1" value="q1a3" id="q1a3">
@@ -56,6 +62,9 @@
                 </div>
                 <div class="submit">
                     <button type="button" class="submit_answer" id="submit-answer-q1">Submit</button>
+                    <div class="answer_error" id="answer-error-1">
+                        <p>Please choose an answer!</p>
+                    </div>
                 </div>
             </section>
             <section class="question question_2" id="question-2">
@@ -63,27 +72,26 @@
                     <img class="squares" src="./assets/img/squares-2.svg" alt="" />
                     <div class="text_wrapper">
                         <div class="lets_assess">
-                            <h2>Let's Assess <span class="spacer"></span>Supply Chain: High Value Care</h2>
-                            <img src="./assets/img/redbrick.svg" alt="" class="brick">
+                            <h2>Supply Chain / High Value Care</h2>
                         </div>
                     </div>
                 </div>
                 <div class="answers">
                     <p>Indicate the statement that best reflects your organization: </p>
                     <div class="answer q2_answer_1">
-                        <span class="option">1</span>
+                        <!--                        <span class="option">1</span>-->
                         <p>My organization leverages our size and purchasing power to negotiate better pricing.</p>
                         <button type="button" class="answer_button question2_buttons" id="q2_answer_1">Select</button>
                         <input type="radio" name="question2" value="q2a1" id="q2a1">
                     </div>
                     <div class="answer q2_answer_2">
-                        <span class="option">2</span>
+                        <!--                        <span class="option">2</span>-->
                         <p>My organization uses our supply chain data to ensure pricing is on par for comparable products across our organization and that we are paying what like organizations pay.</p>
                         <button type="button" class="answer_button question2_buttons" id="q2_answer_2">Select</button>
                         <input type="radio" name="question2" value="q2a2" id="q2a2">
                     </div>
                     <div class="answer q2_answer_3">
-                        <span class="option">3</span>
+                        <!--                        <span class="option">3</span>-->
                         <p>My organization uses our supply chain and patient outcomes data to select product and services that promote improved quality while considering total cost of care.</p>
                         <button type="button" class="answer_button question2_buttons" id="q2_answer_3">Select</button>
                         <input type="radio" name="question2" value="q2a3" id="q2a3">
@@ -92,7 +100,9 @@
                 <div class="submit">
                     <button type="button" class="back_button" id="back-button-q2">Go Back</button>
                     <button type="button" class="submit_answer" id="submit-answer-q2">Submit</button>
-
+                    <div class="answer_error" id="answer-error-2">
+                        <p>Please choose an answer!</p>
+                    </div>
                 </div>
 
             </section>
@@ -101,27 +111,26 @@
                     <img class="squares" src="./assets/img/squares-2.svg" alt="" />
                     <div class="text_wrapper">
                         <div class="lets_assess">
-                            <h2>Let's Assess <span class="spacer"></span>Supply Chain</h2>
-                            <img src="./assets/img/redbrick.svg" alt="" class="brick">
+                            <h2>Supply Chain / What do you purchase?</h2>
                         </div>
                     </div>
                 </div>
                 <div class="answers">
                     <p>Indicate the statement that best reflects your supply chain team areas of responsibility:</p>
                     <div class="answer q3_answer1">
-                        <span class="option">1</span>
+                        <!--                        <span class="option">1</span>-->
                         <p>Our supply chain team is responsible for products and clinical capital.</p>
                         <button type="button" class="answer_button question3_buttons" id="q3_answer_1">Select</button>
                         <input type="radio" name="question3" value="q3a1" id="q3a1">
                     </div>
                     <div class="answer q3_answer2">
-                        <span class="option">2</span>
+                        <!--                        <span class="option">2</span>-->
                         <p>Our supply chain team is responsible products, clinical capital and clinical purchased services.</p>
                         <button type="button" class="answer_button question3_buttons" id="q3_answer_2">Select</button>
                         <input type="radio" name="question3" value="q3a2" id="q3a2">
                     </div>
                     <div class="answer q3_answer3">
-                        <span class="option">3</span>
+                        <!--                        <span class="option">3</span>-->
                         <p>Our supply chain team is responsible products, all capital and all purchased services.</p>
                         <button type="button" class="answer_button question3_buttons" id="q3_answer_3">Select</button>
                         <input type="radio" name="question3" value="q3a3" id="q3a3">
@@ -130,7 +139,9 @@
                 <div class="submit">
                     <button type="button" class="back_button" id="back-button-q3">Go Back</button>
                     <button type="button" class="submit_answer" id="submit-answer-q3">Submit</button>
-
+                    <div class="answer_error" id="answer-error-3">
+                        <p>Please choose an answer!</p>
+                    </div>
                 </div>
 
             </section>
@@ -139,27 +150,26 @@
                     <img class="squares" src="./assets/img/squares-2.svg" alt="" />
                     <div class="text_wrapper">
                         <div class="lets_assess">
-                            <h2>Let's Assess <span class="spacer"></span>Supply Chain</h2>
-                            <img src="./assets/img/redbrick.svg" alt="" class="brick">
+                            <h2>Supply Chain / Who do you purchase for?</h2>
                         </div>
                     </div>
                 </div>
                 <div class="answers">
                     <p>Indicate the statement that best reflects your supply chain team areas of responsibility:</p>
                     <div class="answer q4_answer1">
-                        <span class="option">1</span>
+                        <!--                        <span class="option">1</span>-->
                         <p>Our supply chain team is responsible for our hospital’s purchases.</p>
                         <button type="button" class="answer_button question4_buttons" id="q4_answer1">Select</button>
                         <input type="radio" name="question4" value="q4a1" id="q4a1">
                     </div>
                     <div class="answer q4_answer2">
-                        <span class="option">2</span>
+                        <!--                        <span class="option">2</span>-->
                         <p>Our supply chain team is responsible for purchases across all of our hospitals.</p>
                         <button type="button" class="answer_button question4_buttons" id="q4_answer2">Select</button>
                         <input type="radio" name="question4" value="q4a2" id="q4a2">
                     </div>
                     <div class="answer q4_answer3">
-                        <span class="option">3</span>
+                        <!--                        <span class="option">3</span>-->
                         <p>Our supply chain team is responsible for purchases across our enterprise.</p>
                         <button type="button" class="answer_button question4_buttons" id="q4_answer3">Select</button>
                         <input type="radio" name="question4" value="q4a3" id="q4a3">
@@ -168,6 +178,9 @@
                 <div class="submit">
                     <button type="button" class="back_button" id="back-button-q4">Go Back</button>
                     <button type="button" class="submit_answer" id="submit-answer-q4">Submit</button>
+                    <div class="answer_error" id="answer-error-4">
+                        <p>Please choose an answer!</p>
+                    </div>
                 </div>
 
             </section>
@@ -176,33 +189,32 @@
                     <img class="squares" src="./assets/img/squares-2.svg" alt="" />
                     <div class="text_wrapper">
                         <div class="lets_assess">
-                            <h2>Let's Assess <span class="spacer"></span>Supply Chain</h2>
-                            <img src="./assets/img/redbrick.svg" alt="" class="brick">
+                            <h2>Supply Chain / Value Analysis</h2>
                         </div>
                     </div>
                 </div>
                 <div class="answers">
                     <p>Indicate the statement that best reflects your organization’s value analysis:</p>
-                    <div class="answer" id="q5_answer1">
-                        <span class="option">1</span>
+                    <div class="answer col_4" id="q5_answer1">
+                        <!--                        <span class="option">1</span>-->
                         <p>My organization does not have a formal value analysis process.</p>
                         <button type="button" class="answer_button question5_buttons" id="q5_answer1">Select</button>
                         <input type="radio" name="question5" value="q5a1" id="q5a1">
                     </div>
-                    <div class="answer" id="q5_answer2">
-                        <span class="option">2</span>
+                    <div class="answer col_4" id="q5_answer2">
+                        <!--                        <span class="option">2</span>-->
                         <p>My organization uses a structured value analysis process for some of our more complex purchasing decisions.</p>
                         <button type="button" class="answer_button question5_buttons" id="q5_answer2">Select</button>
                         <input type="radio" name="question5" value="q5a2" id="q5a2">
                     </div>
-                    <div class="answer" id="q5_answer3">
-                        <span class="option">3</span>
+                    <div class="answer col_4" id="q5_answer3">
+                        <!--                        <span class="option">3</span>-->
                         <p>Our value analysis teams use a structured process for hospital purchases.</p>
                         <button type="button" class="answer_button question5_buttons" id="q5_answer3">Select</button>
                         <input type="radio" name="question5" value="q5a3" id="q5a3">
                     </div>
-                    <div class="answer" id="q5_answer4">
-                        <span class="option">4</span>
+                    <div class="answer col_4" id="q5_answer4">
+                        <!--                        <span class="option">4</span>-->
                         <p>Our value analysis teams use a structured process for all supply chain purchases across the enterprise.</p>
                         <button type="button" class="answer_button question5_buttons" id="q5_answer4">Select</button>
                         <input type="radio" name="question5" value="q5a4" id="q5a4">
@@ -211,6 +223,9 @@
                 <div class="submit">
                     <button type="button" class="back_button" id="back-button-q5">Go Back</button>
                     <button type="button" class="submit_answer" id="submit-answer-q5">Submit</button>
+                    <div class="answer_error" id="answer-error-5">
+                        <p>Please choose an answer!</p>
+                    </div>
                 </div>
             </section>
             <section class="question question_6" id="question-6">
@@ -218,27 +233,26 @@
                     <img src="./assets/img/squares-2.svg" alt="" class="squares">
                     <div class="text_wrapper">
                         <div class="lets_assess">
-                            <h2>Let's Assess <span class="spacer"></span>Supply Chain: Strategic Purchasing</h2>
-                            <img src="./assets/img/redbrick.svg" class="brick" alt="">
+                            <h2>Supply Chain / Strategic Purchasing</h2>
                         </div>
                     </div>
                 </div>
                 <div class="answers">
                     <p>Please select any that apply:</p>
                     <div class="answer" id="q6_answer1">
-                        <span class="option">1</span>
+                        <!--                        <span class="option">1</span>-->
                         <p>My supply chain leadership regularly reviews our operational processes (from procure to pay) to ensure efficiency.</p>
                         <button type="button" class="answer_button question6_buttons" id="q6_answer1">Select</button>
                         <input type="radio" name="question6" value="q6a1" id="q6a1">
                     </div>
                     <div class="answer" id="q6_answer2">
-                        <span class="option">2</span>
+                        <!--                        <span class="option">2</span>-->
                         <p>My supply chain leadership regularly reviews our operational processes (from procure to pay) to ensure efficiency.</p>
                         <button type="button" class="answer_button question6_buttons" id="q6_answer2">Select</button>
                         <input type="radio" name="question6" value="q6a2" id="q6a2">
                     </div>
                     <div class="answer" id="q6_answer3">
-                        <span class="option">3</span>
+                        <!--                        <span class="option">3</span>-->
                         <p>My supply chain technology shows me the root cause of cost shifts: where, when, and why.</p>
                         <button type="button" class="answer_button question6_buttons" id="q6_answer3">Select</button>
                         <input type="radio" name="question6" value="q6a3" id="q6a3">
@@ -247,10 +261,32 @@
                 <div class="submit">
                     <button type="button" class="back_button" id="back-buton-q6">Go Back</button>
                     <button type="button" class="submit_answer" id="submit-answer-q6">Finish</button>
+                    <div class="answer_error" id="answer-error-6">
+                        <p>Please choose an answer!</p>
+                    </div>
                 </div>
             </section>
         </form>
     </div>
+    <section class="last question" id="question-7">
+        <img src="./assets/img/squares-3.svg" class="squares" alt="" />
+        <h2>Thanks!</h2>
+        <p>Donec sed odio dui. Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam id dolor id nibh ultricies vehicula ut id elit. Aenean lacinia bibendum nulla sed consectetur. Maecenas faucibus mollis interdum.</p>
+        <div class="module" id="form-module">
+            <form name="last">
+                <label for="name">
+                    <input type="text" name="name" placeholder="e.g. First Last"> Name</label>
+                <label for="email">
+                    <input type="text" name="email" placeholder="example@example.com"> Email</label>
+                <button type="button" id="last-button">Submit</button>
+            </form>
+        </div>
+        <div class="other_buttons" id="other-buttons">
+            <button type="button" class="intro_button ceo">Chief Executive Officer</button>
+            <button type="button" class="intro_button cfo">Chief Financial Officer</button>
+            <button type="button" class="intro_button sco">Visit our Content Hub</button>
+        </div>
+    </section>
     <div class="progress_blocks">
         <div class="p_block" id="block_1"><img id="red" class="red" src="./assets/img/redbrick2.svg" alt="" /></div>
         <div class="p_block" id="block_2"><img id="orange" class="orange" src="./assets/img/orangebrick.svg" alt="" /></div>
