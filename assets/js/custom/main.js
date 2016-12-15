@@ -5,11 +5,13 @@ var panel1Height,
     panel3Height,
     panel4Height,
     panel5Height,
+    panel6Height,
     panel1Active = false,
     panel2Active = false,
     panel3Active = false,
     panel4Active = false,
     panel5Active = false,
+    panel6Active = false,
     activePanels = [false, false, false, false, false],
     activeHistory = [-1],
     running = false;
@@ -71,20 +73,20 @@ function main() {
         minHeight: windowH + 'px'
     });
     setQuestionHeights();
-    
-    lastButton.addEventListener('click', function() {
+
+    lastButton.addEventListener('click', function () {
         var module = document.getElementById('form-module');
         TweenLite.to(module, .5, {
             x: '1300px'
         });
-        setTimeout(function() {
+        setTimeout(function () {
             module.style.display = 'none';
-            setTimeout(function() {
+            setTimeout(function () {
                 $('#other-buttons').fadeIn(500);
             }, 100)
         }, 500);
     });
-    
+
 }
 
 function radioCheck(elem) {
@@ -207,11 +209,12 @@ function setQuestionHeights() {
     panel3Height = document.getElementById('question-3').offsetTop;
     panel4Height = document.getElementById('question-4').offsetTop;
     panel5Height = document.getElementById('question-5').offsetTop;
+    panel6Height = document.getElementById('question-6').offsetTop;
 
     setTimeout(function () {
 
         for (y = 0; y < questionHolders.length; y++) {
-            questionHolders[y].style.height = theHeight + 'px';
+            questionHolders[y].style.minHeight = theHeight + 'px';
         }
         for (w = 0; w < questions.length; w++) {
             questions[w].style.display = 'none';
@@ -365,12 +368,20 @@ function setActivePanel() {
         togglePanelStates(3, y);
         //        newUpdatePercentage(3);
         positionBricks(4);
-    } else if (scroll > panel5Height - 100 && activePanels[4] === false) {
+    } else if (scroll > panel5Height - 100 && scroll < panel6Height - 100 && activePanels[4] === false) {
         console.log('Panel 5 is Active');
         y = activeHistory.slice(-1)[0];
         togglePanelStates(4, y);
         //        newUpdatePercentage(4);
         positionBricks(5);
+    } else if (scroll > panel6Height - 100 && activePanels[5] === false) {
+        console.log('Panel 6 is Active');
+        y = activeHistory.slice(-1)[0];
+        togglePanelStates(5, y);
+        positionBricks(6);
+    } else if (scroll > panel6Height - 100){
+        togglePanelStates(6, y);
+        positionBricks('done');
     } else if (scroll < panel1Height - 100) {
         positionBricks(0);
         togglePanelStates(-1, y);
@@ -384,7 +395,7 @@ function setActivePanel() {
 
     function togglePanelStates(activePanel, lastPanel) {
 
-        for (x = 0; x < 5; x++) {
+        for (x = 0; x < 6; x++) {
 
             if (x === activePanel) {
                 activePanels[x] = true;
@@ -399,11 +410,12 @@ function setActivePanel() {
             orange = document.getElementById('orange'),
             green = document.getElementById('green'),
             yellow = document.getElementById('yellow'),
-            blue = document.getElementById('blue');
+            blue = document.getElementById('blue'),
+            darkblue = document.getElementById('darkblue');
 
         switch (panelActive) {
         case 0:
-            TweenLite.to([red, orange, green, yellow, blue], .25, {
+            TweenLite.to([red, orange, green, yellow, blue, darkblue], .25, {
                 y: '-900%'
             });
             break;
@@ -411,7 +423,7 @@ function setActivePanel() {
             TweenLite.to(red, .25, {
                 y: '-105%'
             });
-            TweenLite.to([orange, green, yellow, blue], .25, {
+            TweenLite.to([orange, green, yellow, blue, darkblue], .25, {
                 y: '-900%'
             });
             break;
@@ -422,7 +434,7 @@ function setActivePanel() {
             TweenLite.to(orange, .25, {
                 y: '-105%'
             });
-            TweenLite.to([green, yellow, blue], .25, {
+            TweenLite.to([green, yellow, blue, darkblue], .25, {
                 y: '-900%'
             });
             break;
@@ -433,7 +445,7 @@ function setActivePanel() {
             TweenLite.to(green, .25, {
                 y: '-105%'
             });
-            TweenLite.to([yellow, blue], .25, {
+            TweenLite.to([yellow, blue, darkblue], .25, {
                 y: '-900%'
             });
             break;
@@ -444,7 +456,7 @@ function setActivePanel() {
             TweenLite.to(yellow, .25, {
                 y: '-105%'
             });
-            TweenLite.to(blue, .25, {
+            TweenLite.to([blue, darkblue], .25, {
                 y: '-900%'
             });
             break;
@@ -455,6 +467,40 @@ function setActivePanel() {
             TweenLite.to(blue, .25, {
                 y: '-105%'
             });
+            TweenLite.to(darkblue, .25, {
+                y: '-900%'
+            })
+            break;
+        case 6:
+            TweenLite.to([red, orange, green, yellow, blue], .25, {
+                y: '0%'
+            });
+            TweenLite.to(darkblue, .25, {
+                y: '-105%'
+            });
+            break;
+        case 'done':
+            TweenLite.to(orange, .25, {
+                y: '20%'
+            });
+            TweenLite.to(green, .25, {
+                y: '40%'
+            });
+            TweenLite.to(yellow, .25, {
+                y: '60%'
+            });
+            TweenLite.to(blue, .25, {
+                y: '80%'
+            });
+            TweenLite.to(darkblue, .25, {
+                y: '100%'
+            });
+            setTimeout(function(){
+                var progressBlocks = document.getElementById('progress-blocks');
+                TweenLite.to(progressBlocks, .5, {
+                    x: '250px'
+                });
+            }, 500);
             break;
         }
     }

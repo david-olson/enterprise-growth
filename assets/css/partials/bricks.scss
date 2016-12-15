@@ -1,5 +1,6 @@
 .progress_blocks {
     position: fixed;
+//    padding: absolute;
     right: 40px;
     bottom: 20px;
     img {
@@ -22,5 +23,14 @@
     }
     .blue {
         bottom: 320px;
+    }
+    .darkblue {
+        bottom: 400px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .progress_blocks {
+        display: none;
     }
 }

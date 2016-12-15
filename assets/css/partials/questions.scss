@@ -231,3 +231,38 @@
         }
     }
 }
+
+@media only screen and (max-width: 1300px) {
+    .question {
+        .answer {
+            margin-right: 1%;
+        }
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .question {
+        .squares {
+                height: auto; 
+                width: 80%;
+            }
+        .answers {
+            width: 90%;
+            margin: 0 auto;
+            display: block;
+        }
+        .answer {
+            margin-right: 0;
+            width: 100%;
+            display: block;
+            min-height: initial !important;
+        }
+        .answer.col_4 {
+            width: 100%;
+        }
+        .submit {
+            width: 90%;
+            margin: 0 auto;
+        }
+    }
+}
